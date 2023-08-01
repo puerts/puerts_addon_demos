@@ -3,6 +3,13 @@ set (CMAKE_CXX_STANDARD 14)
 
 project (puerts_test_addon)
 
+if(NOT CMAKE_BUILD_TYPE)
+  set(CMAKE_BUILD_TYPE Release)
+endif()
+
+set(CMAKE_CXX_FLAGS_DEBUG "-g")
+set(CMAKE_CXX_FLAGS_RELEASE "-O3")
+
 set(PUERTS_LIB_ROOT ../puerts_libs)
 set(PUERTS_INCLUDE ${PUERTS_LIB_ROOT}/include)
 set(PUERTS_SRC ${PUERTS_LIB_ROOT}/src)
