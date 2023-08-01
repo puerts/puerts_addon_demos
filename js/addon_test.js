@@ -1,7 +1,7 @@
-const puerts_node = require('puerts');
-const {$ref, $unref} = puerts_node;
+const puerts = require('puerts');
+const {$ref, $unref} = puerts;
 
-const puerts_test_addon = puerts_node.load("../addon_test/puerts_test_addon");
+const puerts_test_addon = puerts.load("../addon_test/puerts_test_addon");
 
 const TestClass = puerts_test_addon.TestClass;
 
