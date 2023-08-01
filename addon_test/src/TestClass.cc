@@ -21,7 +21,6 @@ TestClass::TestClass(int32_t InX, int32_t InY)
 
 int32_t TestClass::Add(int32_t a, int32_t b)
 {
-	printf("TestClass::Add(%d, %d)\n", a, b);
 	return a + b;
 }
 
