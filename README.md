@@ -3,6 +3,7 @@
 ## compile hello_world addon
 
 ``` bash
+npm install .
 cd hello_world
 mkdir build
 cd build/
