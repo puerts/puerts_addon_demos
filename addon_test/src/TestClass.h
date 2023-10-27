@@ -70,6 +70,13 @@ public:
     void StrPtr(std::string * str);
 
 	void ConstRef(const int32_t & a);
+    
+    void* GetBuffer()
+    {
+        return Buff;
+    }
+    
+    char Buff[100];
 
     static int StaticInt;
 

@@ -11,7 +11,7 @@ void Add_Wrap(pesapi_callback_info info) {
     pesapi_add_return(info, pesapi_create_int32(env, Add(x, y)));
 }
 
-void Init() {
+static void Init() {
     pesapi_property_descriptor properties = pesapi_alloc_property_descriptors(1);
     pesapi_set_method_info(properties, 0, "Add", true, Add_Wrap, NULL, NULL);
     pesapi_define_class("Calc", NULL, "Calc", NULL, NULL, 1, properties, NULL);

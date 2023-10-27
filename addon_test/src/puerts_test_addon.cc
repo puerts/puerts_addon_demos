@@ -1,5 +1,6 @@
 #include <pesapi.h>
 #include <iostream>
+#include <cstring>
 #include <Binding.hpp>
 #include "TestClass.h"
 #include "AdvanceTestClass.h"
@@ -9,7 +10,7 @@ UsingCppType(BaseClass);
 UsingCppType(TestClass);
 UsingCppType(AdvanceTestClass);
 
-void Init() {
+static void Init() {
     puerts::DefineClass<NoDeleteClass>()
         .Constructor()
         .Register();
@@ -27,6 +28,7 @@ void Init() {
             ))
         .Property("X", MakeProperty(&TestClass::X))
         .Property("Y", MakeProperty(&TestClass::Y))
+        .Property("Buff", MakeProperty(&TestClass::Buff))
         .Variable("StaticInt", MakeVariable(&TestClass::StaticInt))
         .Variable("Ten", MakeReadonlyVariable(&TestClass::Ten))
         .Function("Add", MakeFunction(&TestClass::Add))
@@ -39,6 +41,7 @@ void Init() {
         .Method("CStr", MakeFunction(&TestClass::CStr))
         .Method("StrPtr", MakeFunction(&TestClass::StrPtr))
         .Method("ConstRef", MakeFunction(&TestClass::ConstRef))
+        .Method("GetBuffer", MakeFunction(&TestClass::GetBuffer))
         .Function("Overload", CombineOverloads(
             MakeOverload(void(*)(), &TestClass::Overload),
             MakeOverload(void(*)(int32_t), &TestClass::Overload),

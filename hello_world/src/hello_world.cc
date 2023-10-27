@@ -31,7 +31,7 @@ int HelloWorld::StaticField = 0;
 
 UsingCppType(HelloWorld);
 
-void Init() {
+static void Init() {
     puerts::DefineClass<HelloWorld>()
         .Constructor<int>()
         .Method("Foo", MakeFunction(&HelloWorld::Foo))
